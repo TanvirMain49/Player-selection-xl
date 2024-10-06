@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- daisy ui cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .lato {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body class="lato">
+    <header class="w-10/12 mx-auto pt-6">
+      <!-- nav bar section start -->
+      <nav class="pb-12">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <img src="images/logo.webp" alt="" />
+            <a class="btn btn-ghost text-xl">Peddy</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-[#131313]">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <div class="border border-[#0E7A81] rounded-full p-2">
+              <img
+                src="https://img.icons8.com/ios/80/gender-neutral-user.png"
+                alt=""
+                class="w-5 h-5"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- nav bar section end -->
+
+      <!-- banner section start -->
+      <section>
+        <!-- text section start -->
+        <div class="text-center space-y-8">
+          <div>
+            <p class="font-bold text-gray-500">Bringing Families Together ❤️‍🔥</p>
+          </div>
+
+          <div class="w-5/12 mx-auto">
+            <h1 class="text-5xl font-extrabold">
+              Your Path to Adoption Starts Here
+            </h1>
+          </div>
+
+          <div class="w-6/12 mx-auto">
+            <p class="text-base text-[#131313]">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a.
+            </p>
+          </div>
+
+          <div>
+            <button class="btn bg-[#0E7A81] text-white">View more</button>
+          </div>
+        </div>
+        <!-- text section end -->
+
+        <!-- img section start -->
+        <div class="flex justify-center items-center py-16">
+          <img src="images/pet.webp" alt="" />
+        </div>
+        <!-- img section end -->
+      </section>
+      <!-- banner section end -->
+
+      <div class="space-y-3 py-16">
+        <h1 class="text-4xl text-center font-extrabold">
+          Adopt Your Best Friend
+        </h1>
+        <p class="w-6/12 mx-auto text-center text-[#232323]">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a.
+        </p>
+      </div>
+    </header>
+
+    <!-- all api section start -->
+
+    <!-- !get PETs btn by api start -->
+    <section
+      id="pets-btn"
+      class="w-10/12 mx-auto flex justify-center items-center gap-24 pb-16"
+    ></section>
+    <!-- !get PETs btn by api end -->
+
+    <!-- !sort btn start -->
+    <div class="w-10/12 mx-auto flex justify-between">
+      <h1 class="text-2xl font-extrabold">Best Deal For you</h1>
+      <button class="btn bg-[#0E7A81] text-white">Sort by Price</button>
+    </div>
+    <!-- !sort btn end -->
+
+    <!-- !show all the data or pets card section start -->
+    <section class="w-10/12 mx-auto flex gap-6">
+      <!-- show pets data start-->
+      <div
+        id ='pet-display'
+        class="w-9/12 border border-gray-200 rounded-lg"
+      >
+      <div id="pet-container" class="grid grid-cols-3 items-center gap-4 p-3">
+
+      </div>
+        <div class="flex justify-center items-center pt-16">
+            <span id="loading" class="loading loading-bars loading-lg hidden"></span>
+        </div>
+      </div>
+      <!-- show pets data end-->
+
+      <!-- show liked pets photo start-->
+      <div class="w-3/12 border border-gray-200 p-3 rounded-xl">
+        <!-- card img -->
+        <div id="post-container" class="grid grid-cols-2 gap-2">
+
+            
+        </div>
+      </div>
+      <!-- show liked pets photo end-->
+    </section>
+    <!-- !show all the data or pets card section end -->
+
+    <!-- all api section end -->
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
