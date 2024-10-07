@@ -27,15 +27,15 @@
     </style>
   </head>
   <body class="lato">
-    <header class="w-10/12 mx-auto pt-6">
+    <header class="md:w-10/12 md:mx-auto md:pt-6 p-2">
       <!-- nav bar section start -->
       <nav class="pb-12">
         <div class="navbar bg-base-100">
           <div class="navbar-start">
             <img src="images/logo.webp" alt="" />
-            <a class="btn btn-ghost text-xl">Peddy</a>
+            <a class="btn btn-ghost text-xl font-bold">Peddy</a>
           </div>
-          <div class="navbar-center hidden lg:flex">
+          <div class="navbar-center md:block hidden ">
             <ul class="menu menu-horizontal px-1 text-[#131313]">
               <li><a>Home</a></li>
               <li><a>Shop</a></li>
@@ -63,14 +63,14 @@
             <p class="font-bold text-gray-500">Bringing Families Together ❤️‍🔥</p>
           </div>
 
-          <div class="w-5/12 mx-auto">
-            <h1 class="text-5xl font-extrabold">
+          <div class="lg:w-5/12 mx-auto">
+            <h1 class="md:text-5xl text-4xl font-extrabold">
               Your Path to Adoption Starts Here
             </h1>
           </div>
 
-          <div class="w-6/12 mx-auto">
-            <p class="text-base text-[#131313]">
+          <div class="lg:w-6/12 w-10/12 mx-auto">
+            <p class="text-base text-[#131313] text-center">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a.
@@ -78,24 +78,26 @@
           </div>
 
           <div>
-            <button class="btn bg-[#0E7A81] text-white">View more</button>
+            <a href="#pets-btn" class="btn bg-[#0E7A81] text-white">View more</a>
           </div>
         </div>
         <!-- text section end -->
 
         <!-- img section start -->
-        <div class="flex justify-center items-center py-16">
+        <div class="flex justify-center items-center md:py-16 py-8">
           <img src="images/pet.webp" alt="" />
         </div>
         <!-- img section end -->
       </section>
       <!-- banner section end -->
 
-      <div class="space-y-3 py-16">
-        <h1 class="text-4xl text-center font-extrabold">
+      <div class="space-y-3 md:py-16 py-4">
+        <h1 class="md:text-4xl text-3xl text-center font-extrabold">
           Adopt Your Best Friend
         </h1>
-        <p class="w-6/12 mx-auto text-center text-[#232323]">
+        <p
+          class="md:w-6/12 w-10/12 mx-auto md:text-base text-sm text-center text-[#232323]"
+        >
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a.
@@ -108,47 +110,72 @@
     <!-- !get PETs btn by api start -->
     <section
       id="pets-btn"
-      class="w-10/12 mx-auto flex justify-center items-center gap-24 pb-16"
+      class="md:w-10/12 mx-auto flex md:flex-row flex-col justify-center items-center md:gap-24 gap-y-10 pb-16"
     ></section>
     <!-- !get PETs btn by api end -->
 
     <!-- !sort btn start -->
-    <div class="w-10/12 mx-auto flex justify-between">
+    <div
+      onclick="sortPrice()"
+      class="md:w-10/12 md:px-0 px-4 mx-auto flex justify-between items-center pb-5"
+    >
       <h1 class="text-2xl font-extrabold">Best Deal For you</h1>
       <button class="btn bg-[#0E7A81] text-white">Sort by Price</button>
     </div>
     <!-- !sort btn end -->
 
     <!-- !show all the data or pets card section start -->
-    <section class="w-10/12 mx-auto flex gap-6">
+    <section
+      class="md:w-10/12 md:mx-auto px-2 flex md:flex-row flex-col md:gap-6 gap-y-2"
+    >
       <!-- show pets data start-->
-      <div
-        id ='pet-display'
-        class="w-9/12 border border-gray-200 rounded-lg"
-      >
-      <div id="pet-container" class="grid grid-cols-3 items-center gap-4 p-3">
-
-      </div>
+      <div id="pet-display" class="md:w-9/12 border border-gray-200 rounded-lg">
+        <div
+          id="pet-container"
+          class="grid md:grid-cols-3 grid-cols-1 items-center gap-4 p-3"
+        ></div>
         <div class="flex justify-center items-center pt-16">
-            <span id="loading" class="loading loading-bars loading-lg hidden"></span>
+          <span
+            id="loading"
+            class="loading loading-bars loading-lg hidden py-56"
+          ></span>
         </div>
       </div>
       <!-- show pets data end-->
 
       <!-- show liked pets photo start-->
-      <div class="w-3/12 border border-gray-200 p-3 rounded-xl">
+      <div class="md:w-3/12 border border-gray-200 p-3 rounded-xl">
         <!-- card img -->
-        <div id="post-container" class="grid grid-cols-2 gap-2">
-
-            
-        </div>
+        <div id="post-container" class="grid grid-cols-2 gap-2"></div>
       </div>
       <!-- show liked pets photo end-->
     </section>
     <!-- !show all the data or pets card section end -->
-
     <!-- all api section end -->
-    
+
+    <!-- modal for adopt btn start -->
+    <div id="adopt-modal" class="">
+        <dialog id="my_modal_1" class="modal">
+            <div class="modal-box flex flex-col justify-center items-center">
+                <div>
+                    <img src="https://img.icons8.com/?size=48&id=12208&format=png" alt="" class="h-16">
+                </div>
+                <div class="text-center space-y-4">
+                    <h3 class="text-5xl font-bold">Congratulation!</h3>
+                    <p class="font-bold text-xl">Adopting Process is Start For your Pet</p>
+                </div>
+              <h1 id="adopt-cnt" class="text-5xl font-extrabold py-5">3</h1>
+              </div>
+            </div>
+          </dialog>
+
+    </div>
+    <!-- modal for adopt btn end -->
+
+    <!-- show modal for details btn start-->
+    <!-- Open the modal using ID.showModal() method -->
+    <div id="show-modal"></div>
+    <!-- shoe modal for details btn end-->
 
     <script src="script.js"></script>
   </body>
