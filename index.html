@@ -33,9 +33,9 @@
         <div class="navbar bg-base-100">
           <div class="navbar-start">
             <img src="images/logo.webp" alt="" />
-            <a class="btn btn-ghost text-xl font-bold">Peddy</a>
+            <a class="text-xl font-bold pl-3">Peddy</a>
           </div>
-          <div class="navbar-center md:block hidden ">
+          <div class="navbar-center md:block hidden">
             <ul class="menu menu-horizontal px-1 text-[#131313]">
               <li><a>Home</a></li>
               <li><a>Shop</a></li>
@@ -78,7 +78,9 @@
           </div>
 
           <div>
-            <a href="#pets-btn" class="btn bg-[#0E7A81] text-white">View more</a>
+            <a href="#pets-btn" class="btn bg-[#0E7A81] text-white"
+              >View more</a
+            >
           </div>
         </div>
         <!-- text section end -->
@@ -105,77 +107,160 @@
       </div>
     </header>
 
-    <!-- all api section start -->
+    <main>
+      <!-- all api section start -->
 
-    <!-- !get PETs btn by api start -->
-    <section
-      id="pets-btn"
-      class="md:w-10/12 mx-auto flex md:flex-row flex-col justify-center items-center md:gap-24 gap-y-10 pb-16"
-    ></section>
-    <!-- !get PETs btn by api end -->
+      <!-- !get PETs btn by api start -->
+      <section
+        id="pets-btn"
+        class="md:w-10/12 mx-auto flex md:flex-row flex-col justify-center items-center md:gap-24 gap-y-10 pb-16"
+      ></section>
+      <!-- !get PETs btn by api end -->
 
-    <!-- !sort btn start -->
-    <div
-      onclick="sortPrice()"
-      class="md:w-10/12 md:px-0 px-4 mx-auto flex justify-between items-center pb-5"
-    >
-      <h1 class="text-2xl font-extrabold">Best Deal For you</h1>
-      <button class="btn bg-[#0E7A81] text-white">Sort by Price</button>
-    </div>
-    <!-- !sort btn end -->
+      <!-- !sort btn start -->
+      <div
+        onclick="sortPrice()"
+        class="md:w-10/12 md:px-0 px-4 mx-auto flex justify-between items-center pb-5"
+      >
+        <h1 class="text-2xl font-extrabold">Best Deal For you</h1>
+        <button class="btn bg-[#0E7A81] text-white">Sort by Price</button>
+      </div>
+      <!-- !sort btn end -->
 
-    <!-- !show all the data or pets card section start -->
-    <section
-      class="md:w-10/12 md:mx-auto px-2 flex md:flex-row flex-col md:gap-6 gap-y-2"
-    >
-      <!-- show pets data start-->
-      <div id="pet-display" class="md:w-9/12 border border-gray-200 rounded-lg">
+      <!-- !show all the data or pets card section start -->
+      <section
+        class="md:w-10/12 md:mx-auto px-2 flex md:flex-row flex-col md:gap-6 gap-y-2"
+      >
+        <!-- show pets data start-->
         <div
-          id="pet-container"
-          class="grid md:grid-cols-3 grid-cols-1 items-center gap-4 p-3"
-        ></div>
-        <div class="flex justify-center items-center pt-16">
-          <span
-            id="loading"
-            class="loading loading-bars loading-lg hidden py-56"
-          ></span>
+          id="pet-display"
+          class="md:w-9/12 border border-gray-200 rounded-lg"
+        >
+          <div
+            id="pet-container"
+            class="grid md:grid-cols-3 grid-cols-1 items-center gap-4 p-3"
+          ></div>
+          <div class="flex justify-center items-center pt-16">
+            <span
+              id="loading"
+              class="loading loading-bars loading-lg hidden py-56"
+            ></span>
+          </div>
         </div>
-      </div>
-      <!-- show pets data end-->
+        <!-- show pets data end-->
 
-      <!-- show liked pets photo start-->
-      <div class="md:w-3/12 border border-gray-200 p-3 rounded-xl">
-        <!-- card img -->
-        <div id="post-container" class="grid grid-cols-2 gap-2"></div>
-      </div>
-      <!-- show liked pets photo end-->
-    </section>
-    <!-- !show all the data or pets card section end -->
-    <!-- all api section end -->
+        <!-- show liked pets photo start-->
+        <div class="md:w-3/12 border border-gray-200 p-3 rounded-xl">
+          <!-- card img -->
+          <div id="post-container" class="grid grid-cols-2 gap-2"></div>
+        </div>
+        <!-- show liked pets photo end-->
+      </section>
+      <!-- !show all the data or pets card section end -->
+      <!-- all api section end -->
+    </main>
 
     <!-- modal for adopt btn start -->
     <div id="adopt-modal" class="">
-        <dialog id="my_modal_1" class="modal">
-            <div class="modal-box flex flex-col justify-center items-center">
-                <div>
-                    <img src="https://img.icons8.com/?size=48&id=12208&format=png" alt="" class="h-16">
-                </div>
-                <div class="text-center space-y-4">
-                    <h3 class="text-5xl font-bold">Congratulation!</h3>
-                    <p class="font-bold text-xl">Adopting Process is Start For your Pet</p>
-                </div>
-              <h1 id="adopt-cnt" class="text-5xl font-extrabold py-5">3</h1>
-              </div>
-            </div>
-          </dialog>
-
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box flex flex-col justify-center items-center">
+          <div>
+            <img
+              src="https://img.icons8.com/?size=48&id=12208&format=png"
+              alt=""
+              class="h-16"
+            />
+          </div>
+          <div class="text-center space-y-4">
+            <h3 class="text-5xl font-bold">Congratulation!</h3>
+            <p class="font-bold text-xl">
+              Adopting Process is Start For your Pet
+            </p>
+          </div>
+          <h1 id="adopt-cnt" class="text-5xl font-extrabold py-5">3</h1>
+        </div>
+      </dialog>
     </div>
     <!-- modal for adopt btn end -->
 
     <!-- show modal for details btn start-->
-    <!-- Open the modal using ID.showModal() method -->
     <div id="show-modal"></div>
     <!-- shoe modal for details btn end-->
+
+    <!-- footer section start -->
+    <footer class="py-6 bg-black text-white md:px-0 px-5 md:mt-16 mt-6">
+      <div class="flex md:justify-evenly justify-start md:gap-36 md:flex-row flex-col py-9 space-y-7">
+        <!-- first section -->
+        <div class="space-y-5 pt-8">
+          <!-- logo -->
+          <div class="flex items-center gap-1">
+            <img src="images/logo.webp" alt="" />
+            <a class="text-xl font-bold pl-3">Peddy</a>
+          </div>
+
+          <!-- description -->
+          <div class="space-y-1">
+            <p class="text-sm">Location: av. Washington 165, NY CA</p>
+            <p class="text-sm">54003</p>
+            <p class="text-sm">Phone: +31 85 964 47 25</p>
+            <p class="text-sm">Email: info@yourdomain.com</p>
+            <p class="text-sm">Openings hours: 9.00 AM - 5.00 PM</p>
+          </div>
+
+          <!-- social media logo -->
+          <div class="flex gap-2">
+            <img
+              src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png"
+              alt=""
+              class="h-10"
+            />
+            <img
+              src="https://img.icons8.com/?size=48&id=yoQabS8l0qpr&format=png"
+              alt=""
+              class="h-10"
+            />
+            <img
+              src="https://img.icons8.com/?size=48&id=19318&format=png"
+              alt=""
+              class="h-10"
+            />
+            <img
+              src="https://img.icons8.com/?size=48&id=32323&format=png"
+              alt=""
+              class="h-10"
+            />
+          </div>
+        </div>
+
+        <!-- second section -->
+        <div class="">
+          <a href="#" class="text-xl font-semibold">Useful Links</a>
+          <div class="space-y-2 md:pt-6 pt-3">
+            <p class="text-sm text-gray-400">Home</p>
+            <p class="text-sm text-gray-400">About Us</p>
+            <p class="text-sm text-gray-400">Animals</p>
+            <p class="text-sm text-gray-400">Foundation</p>
+            <p class="text-sm text-gray-400">Contact</p>
+          </div>
+        </div>
+
+        <!-- third section -->
+        <div class="space-y-2 md:pt-0 pt-2">
+          <h1 class="text-xl font-bold">Drop a Message</h1>
+          <div class="md:pt-5 pt-2">
+            <input
+              type="email"
+              name=""
+              id=""
+              placeholder="Enter your email"
+              class="bg-neutral-700 text-white text-sm text-left border-none rounded-xl py-3 px-2"
+            />
+          </div>
+          <button class="bg-[#0E7A81] text-white md:w-full w-44 md:py-1 py-2 rounded-xl px-1">Subscribe</button>
+        </div>
+      </div>
+    </footer>
+    <!-- footer section end -->
 
     <script src="script.js"></script>
   </body>

@@ -1,3 +1,5 @@
+
+// !<----- display all the data start ----->
 // display data
 const displayData = (pets) => {
     const petContainerEL = document.getElementById('pet-container')
@@ -46,7 +48,7 @@ const displayData = (pets) => {
                   alt=""
                   class="w-5 h-5"
                 />
-                <p>Breed: ${breed}</p>
+                <p>Breed: ${breed?breed:"unknown"}</p>
               </span>
               <span class="flex items-center gap-2 text-gray-500 text-base">
                 <img
@@ -54,7 +56,7 @@ const displayData = (pets) => {
                   alt=""
                   class="w-5 h-5"
                 />
-                <p>Birth: ${date_of_birth}</p>
+                <p>Birth: ${date_of_birth?date_of_birth:"Not available"}</p>
               </span>
               <span class="flex items-center gap-2 text-gray-500 text-base">
                 <img
@@ -62,7 +64,7 @@ const displayData = (pets) => {
                   alt=""
                   class="w-5 h-5"
                 />
-                <p>Gender:${gender}</p>
+                <p>Gender: ${gender?gender:"unknown"}</p>
               </span>
               <span class="flex items-center gap-2 text-gray-500 text-base">
                 <img
@@ -70,7 +72,7 @@ const displayData = (pets) => {
                   alt=""
                   class="w-5 h-5"
                 />
-                <p>Price : ${price}$</p>
+                <p>Price : ${price?price+' $':"Not available"}</p>
               </span>
             </div>
           </div>
@@ -121,34 +123,10 @@ const displayBtn = (categories) => {
     });
 
 }
+// !<-----display all the data end ----->
 
-// fetch single data or single pets data
-let lastClickBtn = null;
-const handleBtn = async (category, id) => {
 
-    const currentBtn = document.getElementById(`category-btn-${id}`);
-    globalPetData =[];
-    if (lastClickBtn) {
-        lastClickBtn.classList.add('rounded-xl')
-        lastClickBtn.classList.remove('rounded-full', 'bg-[#0E7A81]', 'text-white')
-    }
-    currentBtn.classList.remove('rounded-xl')
-    currentBtn.classList.add('rounded-full', 'bg-[#0E7A81]', 'text-white')
-
-    lastClickBtn = currentBtn;
-
-    document.getElementById('pet-container').classList.add('hidden');
-    document.getElementById('loading').classList.remove('hidden');
-
-    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
-    const data = await res.json()
-    setTimeout(function () {
-        globalPetData = data.data
-        displayData(globalPetData);
-    }, 2000)
-
-}
-
+// !<-----handle btn start----->
 //liked img handler
 const postHandler = (imgs) => {
     const postContainerEl = document.getElementById('post-container');
@@ -160,7 +138,6 @@ const postHandler = (imgs) => {
     `
     postContainerEl.append(div);
 }
-
 // sort handler
 const sortPrice = () => {
     document.getElementById('loading').classList.remove('hidden');
@@ -176,7 +153,6 @@ const sortPrice = () => {
         }
     }, 2000)
 }
-
 //details handler
 const openModal = async (id) => {
     console.log(id);
@@ -249,7 +225,6 @@ const openModal = async (id) => {
     my_modal_5.showModal()
 
 }
-
 // adopt modal
 const adoptModal = (id)=>{
     console.log(id);
@@ -275,7 +250,36 @@ const adoptModal = (id)=>{
 
 
 }
+// !<-----handle btn end----->
 
+
+// !<-----fetch btn start----->
+// fetch single data or single pets data
+let lastClickBtn = null;
+const handleBtn = async (category, id) => {
+
+    const currentBtn = document.getElementById(`category-btn-${id}`);
+    globalPetData =[];
+    if (lastClickBtn) {
+        lastClickBtn.classList.add('rounded-xl')
+        lastClickBtn.classList.remove('rounded-full', 'bg-[#0E7A81]', 'text-white')
+    }
+    currentBtn.classList.remove('rounded-xl')
+    currentBtn.classList.add('rounded-full', 'bg-[#0E7A81]', 'text-white')
+
+    lastClickBtn = currentBtn;
+
+    document.getElementById('pet-container').classList.add('hidden');
+    document.getElementById('loading').classList.remove('hidden');
+
+    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
+    const data = await res.json()
+    setTimeout(function () {
+        globalPetData = data.data
+        displayData(globalPetData);
+    }, 2000)
+
+}
 // fetch for pet btn
 const loadCatagories = async () => {
     // for catagories btn api
@@ -294,7 +298,10 @@ const loadAllData = async () => {
     displayData(globalPetData);
 
 }
+// !<-----fetch btn end----->
 
+
+// !<-----function call----->
 loadCatagories();
 loadAllData();
 
