@@ -21,7 +21,8 @@ fetches and provide user seamless, interactive experience to explore detailed pe
 
 ## Live Demo
 
-Check out the live version of the project here: [](tanvi-assignment6.surge.sh)  
+Check out the live version of the project here: [tanvi-assignment6.surge.sh](http://tanvi-assignment6.surge.sh)
+  
 
 ## Installation Instructions
 
