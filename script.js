@@ -253,7 +253,7 @@ const adoptModal = (id)=>{
 // !<-----handle btn end----->
 
 
-// !<-----fetch btn start----->
+// !<-----fetch data start----->
 // fetch single data or single pets data
 let lastClickBtn = null;
 const handleBtn = async (category, id) => {
@@ -298,7 +298,7 @@ const loadAllData = async () => {
     displayData(globalPetData);
 
 }
-// !<-----fetch btn end----->
+// !<-----fetch data end----->
 
 
 // !<-----function call----->
